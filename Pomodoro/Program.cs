@@ -6,7 +6,7 @@
         {
             Console.WriteLine("Enter 1 to begin");
             string userInput = Console.ReadLine();
-            Countdown countdown = new Countdown();
+            Countdown countdown = new Countdown(1);
         }
     }
 }

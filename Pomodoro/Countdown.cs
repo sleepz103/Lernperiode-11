@@ -8,21 +8,28 @@ namespace Pomodoro
 {
     internal class Countdown
     {
-        public Countdown()
-        {
-            int initMinutes = 25;
+        private int _minutes;
+        private int _seconds = 0;
 
-            for (int i = initMinutes; i >= 0; i--)
+        public Countdown(int minutes)
+        {
+            _minutes = minutes;
+            Console.Clear();
+            Console.WriteLine("{0}:{1}", _minutes.ToString("00"), _seconds.ToString("00"));
+            Thread.Sleep(1000);
+            Console.Clear();
+            for (int i = 0; i < minutes*60-1; i++)
             {
-                Console.WriteLine(i);
-                Thread.Sleep(100);
+                if(_seconds == 0)
+                {
+                    _minutes--;
+                    _seconds = 60;
+                }
+                _seconds--;
+                Console.WriteLine("{0}:{1}", _minutes.ToString("00"), _seconds.ToString("00"));
+                Thread.Sleep(1000);
+                Console.Clear();
             }
-        }
-
-
-        private int Minutes2Seconds(int minutes)
-        {
-            return minutes * 60;
         }
     }
 }
