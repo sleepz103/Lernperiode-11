@@ -20,7 +20,7 @@ Heute habe ich Makerspace angeschaut. Dann bin ich zurück zu Zimmer gekommen un
 
 ## 29.8
 
-- [ ] Als Tester den Prototyp möchte ich 1 Eingeben können, um zu sehen, wie die Konsole nach unten von 25:00 nach 00:00, um zu bestätigen, dass es ein vollständiger Countdown ist.
+- [x] Als Tester den Prototyp möchte ich 1 Eingeben können, um zu sehen, wie die Konsole nach unten von 25:00 nach 00:00, um zu bestätigen, dass es ein vollständiger Countdown ist.
 - [ ] Als Anfang erstelle ich eine App für ein iPhone. Sie soll ein Button in der Mitte haben.
 - [ ] Sobald man den Button drückt, wird Zeit von 25:00 nach unten zählen. 
 - [ ] Underneath the time display there are two buttons where first pauses/resumes the time and second resets and stops the time at 25:00.
