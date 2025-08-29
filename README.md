@@ -32,7 +32,6 @@ Heute habe ich Makerspace angeschaut. Dann bin ich zurück zu Zimmer gekommen un
 # 5.8
 
 - [ ] Als Schüler der schon eine mobile App erstellen möchte, durcharbeite ich diesen [Tutorial](https://www.youtube.com/watch?v=m1-bc53EGh8), um die nächsten Arbeitspaketen zu machen. Falls ich noch zu wenig Kenntiss haben werde, werde ich sie mit KI Lösen, um die Zeit nicht zu verlieren.
-- [ ] 
 - [ ] As a user with minimalistic requirements I want to have one single button excactly in the middle of the device, to start the countdown. 
 - [ ] When Button pressed, Then Start countdown
 - [ ]  As an often-disrupted user I want to be abled to pause/resume time to be fair how much I actually worked.
