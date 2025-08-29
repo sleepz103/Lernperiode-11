@@ -25,6 +25,6 @@ Heute habe ich Makerspace angeschaut. Dann bin ich zurück zu Zimmer gekommen un
 - [ ] Sobald man den Button drückt, wird Zeit von 25:00 nach unten zählen. 
 - [ ] Underneath the time display there are two buttons where first pauses/resumes the time and second resets and stops the time at 25:00.
 
-✍️ Heute habe ich... (50-100 Wörter)
+✍️ Heute habe ich die MAUI-Technologie für VS heruntergeladen. Ich habe ein bisschen in die neuen XAML-Sprachen gelernt. Mit dem Tutorial habe ich eine To-Do Layout für ein mobiles App erstellt. Leider hat die App die Funktionen nicht, um die Tasks zu löschen oder erstellen. Da wenn ich versucht habe, auf Android Emulator zu laufen, ist die App immer verschwunden gegangen. Für die Suche nach Lösung habe ich eine Stunde gebraucht aber ohne Erfolg. Und wenn ich zurück zu Windows wechseln wollte, konnte die App nicht mehr laufen. (88)
 
 ☝️ Vergessen Sie nicht, Ihren Code auf github hochzuladen
