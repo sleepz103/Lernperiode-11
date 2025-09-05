@@ -1,10 +1,18 @@
-import { StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import { Button, StyleSheet, View } from "react-native";
+import Countdown from "../Countdown";
+
 
 export default function AboutScreen() {
+  const [started, setStarted] = useState(false);
+
   return (
-    <View
-    style={styles.container}>
-      <Text style={styles.text}>About screen</Text>
+    <View style={styles.container}>
+      {!started ? (
+        <Button title="Begin" onPress={() => setStarted(true)} />
+      ) : (
+        <Countdown minutes={25} />
+      )}
     </View>
   );
 }
@@ -14,7 +22,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#ace100ff"
+    backgroundColor: "#ffffffff"
   },
   text: {
     color: "#ffffff",

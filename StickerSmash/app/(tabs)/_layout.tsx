@@ -5,7 +5,7 @@ export default function TabsLayout() {
   return (
     <Tabs
     screenOptions={{
-      tabBarActiveTintColor: "#e18300ff",
+      tabBarActiveTintColor: "#000000ff",
       headerStyle: {
         backgroundColor: "#e18300ff"
       },
@@ -29,15 +29,16 @@ export default function TabsLayout() {
       <Tabs.Screen
       name="about"
       options={{
-         headerTitle: "About",
-         headerStyle: { backgroundColor: "green" },
-         tabBarIcon: ({focused, color }) =>
+         headerTitle: "Pomodoro",
+         headerTintColor: "#000",
+         headerStyle: {
+            backgroundColor: "#fff"
+         },
+         tabBarIcon: ({focused }) =>
              <Ionicons
-             name={focused ? "information-circle-sharp" : "information-circle-outline"}
-             color={color ? "green" : color}
+             name={focused ? "time-sharp" : "time-outline"}
              size={30} />
       }} />
-      <Tabs.Screen name="+not-found" options={{}} />
     </Tabs>
   );
 }
