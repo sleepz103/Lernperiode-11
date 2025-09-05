@@ -54,13 +54,13 @@ Project ideas:
 
 - [ ] ~~Prepare 5 minute timer after ending 25 (must have)~~
 
-- [ ] run in background (must have)
+- [ ] ~~run in background (must have)~~
 
-- [ ] correct design and hide distractions (enhancement)
+- [ ] ~~correct design and hide distractions (enhancement)~~
 
-- [ ] alert when time ends (enhancement)
+- [ ] ~~alert when time ends (enhancement)~~
 
-- [ ] allow choosing between pre-defined times and setting own time
+- [ ] allow choosing between pre-defined times and setting own time (enhancement)
 
 - [ ] allow to add tasks (text + state) (major update)
   
