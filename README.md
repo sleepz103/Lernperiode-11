@@ -30,6 +30,44 @@ Heute habe ich die MAUI-Technologie für VS heruntergeladen. Ich habe ein bissch
 # 5.8
 
 - [x] Als Schüler der schon eine mobile App erstellen möchte, durcharbeite ich diesen [Tutorial](https://www.youtube.com/watch?v=m1-bc53EGh8), um die nächsten Arbeitspaketen zu machen. Falls ich noch zu wenig Kenntiss haben werde, werde ich sie mit KI Lösen, um die Zeit nicht zu verlieren.
-- [ ] As a user with minimalistic requirements I want to have one single button excactly in the middle of the device, to start the countdown. 
-- [ ] When Button pressed, Then Start countdown
-- [ ] As an often-disrupted user I want to be abled to pause/resume time to be fair how much I actually worked.
+- [x] As a user with minimalistic requirements I want to have one single button excactly in the middle of the device, to start the countdown. 
+- [x] When Button pressed, Then Start countdown
+- [x] As an often-disrupted user I want to be abled to pause/resume time to be fair how much I actually worked.
+
+Heute habe ich den Stil des App von Tutorial angepasst. Dann habe ich gesucht, wie man ein Button erstellt. Danach habe ich KI gefragt, um ein Coundown zu einbauen, und es hat ein Modul erstellt. Ich habe angepasst, sodass wenn man Button druckt, kommt der Timer. Am Ende habe ich KI gefragt, mir zu begleiten, um ein Pause/Resume Button zu erstellen. Dabei habe ich über react States, Props, Imports und Effect gelernt, doch schlussendlich habe ich mit KI gelöst. Obwohl die AP spannend zu lösen waren, bin ich mit meiner Leistung mittlerweile zufrieden, da ich wenig selbst nachmachen kann. (99)
+
+# 12.09 (asynchron dezentral, 5/8)
+
+- [ ] As a pomodoro user, I'd like for the timer to prepare 5-minute timer, so that I can click "Start" and have my break
+
+- [ ] As a I-turn-my-phone-off-and-put-it-away user I want the timer to continue while the app is off, in order to enjoy less distractions (calculate time from now to +25/5 minutes)
+
+- [ ] As a user with minimalistic requirements I want to see one page with everything (network, battery, title) hidden in order to enjoy self-explaining design
+
+- [ ] As a I-turn-my-phone-off-and-put-it-away user I want the timer to hear an alert and receive pop-up notification when it's over in order to know that the app finished counting
+
+----
+
+Project ideas:
+
+- [ ] ~~Just one card (easy)~~
+
+- [ ] ~~Prepare 5 minute timer after ending 25 (must have)~~
+
+- [ ] run in background (must have)
+
+- [ ] correct design and hide distractions (enhancement)
+
+- [ ] alert when time ends (enhancement)
+
+- [ ] allow choosing between pre-defined times and setting own time
+
+- [ ] allow to add tasks (text + state) (major update)
+  
+  - [ ] allow tasks to be added to a project they're worked on, and counting time there ()
+  
+  - [ ] allow starting timer for certain project, which will count up the time
+  
+  - [ ] allow seeing how much time was spent on the project
+  
+  - [ ] tasks can have defined pomos

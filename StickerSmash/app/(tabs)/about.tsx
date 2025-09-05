@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import { Button, StyleSheet, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import Countdown from "../Countdown";
-
 
 export default function AboutScreen() {
   const [started, setStarted] = useState(false);
 
-  return (
+return (
     <View style={styles.container}>
       {!started ? (
-        <Button title="Begin" onPress={() => setStarted(true)} />
+        <Pressable style={styles.beginButton} onPress={() => setStarted(true)}>
+          <Text style={styles.text}>Begin</Text>
+        </Pressable>
       ) : (
-        <Countdown minutes={25} />
+        <Countdown startImmediately={started} />
       )}
     </View>
   );
@@ -27,6 +28,14 @@ const styles = StyleSheet.create({
   text: {
     color: "#ffffff",
     fontSize: 20
-  }
+  },
+  beginButton: {
+    width: 200,
+    height: 200,
+    borderRadius: 100, // half of width/height
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#b6c7ffff",
+  },
 });
 
