@@ -4,6 +4,12 @@ import Countdown from "../Countdown";
 
 export default function AboutScreen() {
   const [started, setStarted] = useState(false);
+  const [isWorkSession, setIsWorkSession] = useState(true);
+
+const handleComplete = () => {
+  setIsWorkSession(!isWorkSession);
+  setStarted(false);
+}
 
 return (
     <View style={styles.container}>
@@ -12,7 +18,17 @@ return (
           <Text style={styles.text}>Begin</Text>
         </Pressable>
       ) : (
-        <Countdown startImmediately={started} />
+        <View>
+          <Text style={styles.text}>
+            {isWorkSession ? "Work Session" : "Break Time"}
+          </Text>
+          <Countdown
+            startImmediately={started}
+            minutes={isWorkSession ? 25 : 5}
+            isComplete={handleComplete}
+            isWorkSession={isWorkSession}
+          />
+        </View>
       )}
     </View>
   );

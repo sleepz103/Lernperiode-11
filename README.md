@@ -38,7 +38,7 @@ Heute habe ich den Stil des App von Tutorial angepasst. Dann habe ich gesucht, w
 
 # 12.09 (asynchron dezentral, 5/8)
 
-- [ ] As a pomodoro user, I'd like for the timer to prepare 5-minute timer, so that I can click "Start" and have my break
+- [x] As a pomodoro user, I'd like for the timer to prepare 5-minute timer, so that I can click "Start" and have my break
 
 - [ ] As a I-turn-my-phone-off-and-put-it-away user I want the timer to continue while the app is off, in order to enjoy less distractions (calculate time from now to +25/5 minutes)
 

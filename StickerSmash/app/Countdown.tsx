@@ -4,11 +4,13 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 type CountdownProps = {
   minutes?: number; // default 25
   startImmediately?: boolean; // default false
+  isComplete?: () => void; // callback when countdown completes
+  isWorkSession?: boolean; // true for work session, false for break
 };
 
 
 
-const Countdown = ({ minutes = 25, startImmediately = false }: CountdownProps) => {
+const Countdown = ({ minutes = 25, startImmediately = false, isComplete }: CountdownProps) => {
   // 1️⃣ State for the remaining seconds
   const [secondsLeft, setSecondsLeft] = useState(minutes * 60);
 
@@ -26,12 +28,13 @@ const Countdown = ({ minutes = 25, startImmediately = false }: CountdownProps) =
       // Stop running when time reaches 0
       if (secondsLeft === 0) {
         setIsRunning(false);
+        isComplete?.();
       }
     }, 1000);
 
     // Cleanup interval on unmount or re-render
     return () => clearInterval(timer);
-  }, [isRunning, secondsLeft]); // re-run if these change
+  }, [isRunning, secondsLeft, isComplete]); // re-run if these change
 
   // 4️⃣ Format seconds as MM:SS
   const formatTime = () => {
