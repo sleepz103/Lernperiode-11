@@ -36,7 +36,7 @@ Heute habe ich die MAUI-Technologie für VS heruntergeladen. Ich habe ein bissch
 
 Heute habe ich den Stil des App von Tutorial angepasst. Dann habe ich gesucht, wie man ein Button erstellt. Danach habe ich KI gefragt, um ein Coundown zu einbauen, und es hat ein Modul erstellt. Ich habe angepasst, sodass wenn man Button druckt, kommt der Timer. Am Ende habe ich KI gefragt, mir zu begleiten, um ein Pause/Resume Button zu erstellen. Dabei habe ich über react States, Props, Imports und Effect gelernt, doch schlussendlich habe ich mit KI gelöst. Obwohl die AP spannend zu lösen waren, bin ich mit meiner Leistung mittlerweile zufrieden, da ich wenig selbst nachmachen kann. (99)
 
-# 12.09 (asynchron dezentral, 5/8)
+# 12.09 (asynchron dezentral, 5/7)
 
 - [x] As a pomodoro user, I'd like for the timer to prepare 5-minute timer, so that I can click "Start" and have my break
 
@@ -45,6 +45,22 @@ Heute habe ich den Stil des App von Tutorial angepasst. Dann habe ich gesucht, w
 - [x] As a user with minimalistic requirements I want to **see one page** with everything (network, battery, title) **hidden** in order to enjoy self-explaining design
 
 - [ ] As a I-turn-my-phone-off-and-put-it-away user I want the timer **to noise an alert and send pop-up notification** when it's over in order to know that the app finished counting
+
+Heute habe ich anders zum Arbeiten gekommen. Für jede Arbeitspaket habe ich zuerst den Quellcode versucht zu verstehen (React ist ähnlich zu C#, aber anstatt fields gibt es states). Dann habe ich versucht, selber paar Befehlen einzugeben. Schliesslich habe ich Copilot gefragt, wie nah an der Lösung war ich. Somit musste die KI mit meinen Code-Vorschlägen arbeiten und ich konnte den Code verstehen. Es hat sich aber herausgestellt, dass die Benachrichtungen zu senden sehr aufwändig ist. Für meine weitere Recherche habe ich kein Zeit gehabt. (85)
+
+
+# 26.09 (asynchron dezentral 6/7) design rework, refactoring, enhancement
+
+- [ ] As an app test I want a button to skip to next state (work/break) in order to see more quickly if next stage at 00:00 is working properly working
+
+- [ ] As a user with minimalistic requirements I'd like smooth animations and a toggle to raw bones design in order to enjoy simple app aesthetic
+
+- [ ] As a developer with little react skills I'd like the code to be refactored in order to understand the structure of the app and be able to develop better
+
+- [ ] As a fast thinking user I'd like choose between pre-defined times in order to get to work more quickly
+
+
+# 31.10 (7/7)
 
 ----
 
@@ -61,6 +77,8 @@ Project ideas:
 - [ ] ~~alert when time ends (enhancement)~~
 
 - [ ] allow choosing between pre-defined times and setting own time (enhancement)
+
+- [ ] let user skip to break/work
 
 - [ ] allow to add tasks (text + state) (major update)
   
