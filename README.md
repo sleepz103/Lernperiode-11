@@ -40,11 +40,11 @@ Heute habe ich den Stil des App von Tutorial angepasst. Dann habe ich gesucht, w
 
 - [x] As a pomodoro user, I'd like for the timer to prepare 5-minute timer, so that I can click "Start" and have my break
 
-- [ ] As a I-turn-my-phone-off-and-put-it-away user I want the timer to continue while the app is off, in order to enjoy less distractions (calculate time from now to +25/5 minutes)
+- [x] As a I-turn-my-phone-off-and-put-it-away user I want the **timer to continue while the app is off**, in order to enjoy less distractions (calculate time from now to +25/5 minutes)
 
-- [ ] As a user with minimalistic requirements I want to see one page with everything (network, battery, title) hidden in order to enjoy self-explaining design
+- [ ] As a user with minimalistic requirements I want to **see one page** with everything (network, battery, title) **hidden** in order to enjoy self-explaining design
 
-- [ ] As a I-turn-my-phone-off-and-put-it-away user I want the timer to hear an alert and receive pop-up notification when it's over in order to know that the app finished counting
+- [ ] As a I-turn-my-phone-off-and-put-it-away user I want the timer **to noise an alert and send pop-up notification** when it's over in order to know that the app finished counting
 
 ----
 
