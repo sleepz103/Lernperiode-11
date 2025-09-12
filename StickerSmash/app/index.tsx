@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import Countdown from "../Countdown";
+import Countdown from "./Countdown";
 
 export default function AboutScreen() {
   const [started, setStarted] = useState(false);
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     borderRadius: 100, // half of width/height
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#b6c7ffff",
+    backgroundColor: "#8ad07cff",
   },
 });
 

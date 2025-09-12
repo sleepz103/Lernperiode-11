@@ -6,8 +6,8 @@ export default function NotFound() {
     <View
     style={styles.container}>
       <Text style={styles.text}>Not Found</Text>
-      <Link href={"/"} style={styles.button}>
-      Go to Home screen
+      <Link href={"./about"} style={styles.button}>
+      Go to About screen
       </Link>
     </View>
   );

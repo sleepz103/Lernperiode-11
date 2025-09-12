@@ -1,6 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useEffect, useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import Animated, { useAnimatedStyle, withSpring } from 'react-native-reanimated';
 
 const STORAGE_KEY = "countdown_state";
 
@@ -119,15 +120,34 @@ const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkS
   };
 
   // 4️⃣ Format seconds as MM:SS
-  const formatTime = () => {
-    const mins = Math.floor(secondsLeft / 60);
-    const secs = secondsLeft % 60;
-    return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+  const AnimatedNumber = ({ value }: { value: number }) => {
+    const animatedStyle = useAnimatedStyle(() => {
+      return {
+        transform: [{ scale: withSpring(1, {
+          damping: 10,
+          stiffness: 100,
+          mass: 0.5,
+        })}],
+      };
+    });
+
+    return (
+      <Animated.Text style={[styles.timer, animatedStyle]}>
+        {String(value).padStart(2, '0')}
+      </Animated.Text>
+    );
   };
+
+  const mins = Math.floor(secondsLeft / 60);
+  const secs = secondsLeft % 60;
 
  return (
     <View style={styles.container}>
-      <Text style={styles.timer}>{formatTime()}</Text>
+      <View style={styles.timerContainer}>
+        <AnimatedNumber value={mins} />
+        <Animated.Text style={styles.timer}>:</Animated.Text>
+        <AnimatedNumber value={secs} />
+      </View>
       {(secondsLeft > 0 || !isRunning) && (
         <Pressable
           style={styles.pauseButton}
@@ -154,7 +174,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   pauseButton: {
-    backgroundColor: "#e18300ff",
+    backgroundColor: "#000000ff",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 10,
@@ -163,5 +183,9 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 20,
     fontWeight: "bold",
+  },
+  timerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
