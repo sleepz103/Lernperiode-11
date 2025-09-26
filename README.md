@@ -48,7 +48,6 @@ Heute habe ich den Stil des App von Tutorial angepasst. Dann habe ich gesucht, w
 
 Heute habe ich anders zum Arbeiten gekommen. Für jede Arbeitspaket habe ich zuerst den Quellcode versucht zu verstehen (React ist ähnlich zu C#, aber anstatt fields gibt es states). Dann habe ich versucht, selber paar Befehlen einzugeben. Schliesslich habe ich Copilot gefragt, wie nah an der Lösung war ich. Somit musste die KI mit meinen Code-Vorschlägen arbeiten und ich konnte den Code verstehen. Es hat sich aber herausgestellt, dass die Benachrichtungen zu senden sehr aufwändig ist. Für meine weitere Recherche habe ich kein Zeit gehabt. (85)
 
-
 # 26.09 (asynchron dezentral 6/7) design rework, refactoring, enhancement
 
 - [ ] As an app test I want a button to skip to next state (work/break) in order to see more quickly if next stage at 00:00 is working properly working
@@ -59,6 +58,8 @@ Heute habe ich anders zum Arbeiten gekommen. Für jede Arbeitspaket habe ich zue
 
 - [ ] As a fast thinking user I'd like choose between pre-defined times in order to get to work more quickly
 
+Heute habe ich mich keine Arbeitspaketene überarbeitet. Ich habe mich sehr schlecht gefühlt. Am Anfang habe ich versucht, die Expo Pakaten zu reparieren. Dann habe ich bemerkt, dass ich mich schwach fühle. Also habe ich Neocitran genommen.
+Ich bin bereit, Absenzpunkte anzunehmen. Allerdings werde ich morgen schauen, ob ich die Arbeit nachholen kann. Für heute mache ich schluss.
 
 # 31.10 (7/7)
 
