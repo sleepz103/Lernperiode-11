@@ -50,7 +50,7 @@ Heute habe ich anders zum Arbeiten gekommen. Für jede Arbeitspaket habe ich zue
 
 # 26.09 (asynchron dezentral 6/7) design rework, refactoring, enhancement
 
-- [ ] As an app test I want a button to skip to next state (work/break) in order to see more quickly if next stage at 00:00 is working properly working
+- [x] As an app test I want a button to skip to next state (work/break) in order to see more quickly if next stage at 00:00 is working properly working
 
 - [ ] As a user with minimalistic requirements I'd like smooth animations and a toggle to raw bones design in order to enjoy simple app aesthetic
 
@@ -61,6 +61,7 @@ Heute habe ich anders zum Arbeiten gekommen. Für jede Arbeitspaket habe ich zue
 Heute habe ich mich keine Arbeitspaketene überarbeitet. Ich habe mich sehr schlecht gefühlt. Am Anfang habe ich versucht, die Expo Pakaten zu reparieren. Dann habe ich bemerkt, dass ich mich schwach fühle. Also habe ich Neocitran genommen.
 Ich bin bereit, Absenzpunkte anzunehmen. Allerdings werde ich morgen schauen, ob ich die Arbeit nachholen kann. Für heute mache ich schluss.
 Für mich ist es wichtig, dass ich für Sprschaufenthalt gesund bleibe, daher bin ich damkbar, dass ich früher zu Hause sein konnte.
+
 # 31.10 (7/7)
 
 ----
