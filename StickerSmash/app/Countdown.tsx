@@ -53,7 +53,6 @@ const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkS
   useEffect(() => {
     const saveState = async () => {
       try {
-        console.log('Saving state:', { finishTime, secondsLeft, isWorkSession });
         const state = {
           finishTime: finishTime?.toISOString(),
           secondsLeft,
@@ -70,16 +69,17 @@ const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkS
 
  // End of code from Claude
 
-  // Timer effect
+  // Calculate finish time and start
   useEffect(() => {
     if(startImmediately && !finishTime) {
       const finish = new Date();
       finish.setMinutes(finish.getMinutes() + minutes);
       setFinishTime(finish);
-      setIsRunning(true); // Set isRunning when timer starts
+      setIsRunning(true);
     }
   }, [startImmediately, minutes]);
 
+  // Countdown logic
   useEffect(() => {
     if (!finishTime || !isRunning) return;
 
@@ -119,7 +119,17 @@ const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkS
     setIsRunning(!isRunning);
   };
 
-  // 4️⃣ Format seconds as MM:SS
+  const handleSkip = () => {
+    setSecondsLeft(0);
+    setIsRunning(false);
+    setFinishTime(null);
+    // Clear saved state
+    AsyncStorage.removeItem(STORAGE_KEY).catch(console.error);
+    // Notify completion
+    isComplete?.();
+  }
+
+  // Format seconds as MM:SS
   const AnimatedNumber = ({ value }: { value: number }) => {
     const animatedStyle = useAnimatedStyle(() => {
       return {
@@ -141,6 +151,7 @@ const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkS
   const mins = Math.floor(secondsLeft / 60);
   const secs = secondsLeft % 60;
 
+  // Render - what shows up on screen
  return (
     <View style={styles.container}>
       <View style={styles.timerContainer}>
@@ -148,14 +159,22 @@ const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkS
         <Animated.Text style={styles.timer}>:</Animated.Text>
         <AnimatedNumber value={secs} />
       </View>
-      {(secondsLeft > 0 || !isRunning) && (
+      <View style={styles.buttonContainer}>
+        {(secondsLeft > 0 || !isRunning) && (
+          <Pressable
+            style={[styles.buttonBase, styles.buttonPrimary]}
+            onPress={handlePauseResume}
+          >
+            <Text style={styles.buttonText}>{isRunning ? "Pause" : "Resume"}</Text>
+          </Pressable>
+        )}
         <Pressable
-          style={styles.pauseButton}
-          onPress={handlePauseResume}
+          style={[styles.buttonBase, styles.buttonSecondary]}
+          onPress={handleSkip}
         >
-          <Text style={styles.pauseText}>{isRunning ? "Pause" : "Resume"}</Text>
+          <Text style={styles.buttonText}>Skip</Text>
         </Pressable>
-      )}
+      </View>
     </View>
   );
 };
@@ -173,19 +192,28 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 20,
   },
-  pauseButton: {
-    backgroundColor: "#000000ff",
+  buttonBase: {
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 10,
   },
-  pauseText: {
+  buttonText: {
     color: "#fff",
     fontSize: 20,
     fontWeight: "bold",
   },
+  buttonPrimary: {
+    backgroundColor: "#000000ff",
+  },
+  buttonSecondary: {
+    backgroundColor: "#666666",
+  },
   timerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    gap: 10,
   },
 });
