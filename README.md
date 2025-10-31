@@ -14,10 +14,8 @@
 
 ## fertiges Projekt
 
-
-
 Watch on Youtube for SFX preview!
-https://youtube.com/shorts/VyyjRPR8biU?feature=share
+![My light Pomodoro](https://youtube.com/shorts/xJbITQi5cA8?feature=share)
 
 ## 22.8
 
@@ -85,11 +83,7 @@ Ich habe während den Sprachaufenthalt die drei Arbeitspaketen nachgeholt. Zuers
 
 - [ ] As a user that likes to personalise their world I want to have a button that with each press changes and remembers a different theme in order to fit the app to myself / mood
 
-
-
 Heute habe ich das Ziel gehabt, die App fertig zu stellen, damit sie zum präsentieren ist. Ich fand, dass es an Reaktion bzw. Haptics in App fehlte. Da ich aber schon früher versucht habe, Haptics zu installieren, habe ich entschieden, sie mit Audio auszuwechseln. Das hat ganz gut funktioniert, ausser wenn components zu schnell gelöscht werden. Danach habe ich die Animationen verbessert, sodass nun jede Button angenehmer zu drücken ist. 
-
-
 
 ----
 
