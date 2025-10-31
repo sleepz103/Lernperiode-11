@@ -3,8 +3,10 @@ import { StyleSheet, Text, View } from "react-native";
 import Countdown from "./Countdown";
 import { Audio } from 'expo-av';
 import { AnimatedButton } from "./components/AnimatedButton";
+import { ThemeProvider, useTheme } from './theme/ThemeContext';
 
-export default function AboutScreen() {
+function AboutScreen() {
+  const { currentTheme, cycleTheme } = useTheme();
   const [started, setStarted] = useState(false);
   const [isWorkSession, setIsWorkSession] = useState(true);
   const soundRef = useRef<Audio.Sound | null>(null);
@@ -46,21 +48,34 @@ const handleComplete = () => {
 }
 
 return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: currentTheme.background }]}>
       {!started ? (
-        <AnimatedButton
-          title="Begin"
-          onPress={async () => {
-            await playSound();
-            setStarted(true);
-          }}
-          style={styles.beginButton}
-        />
+        <>
+          <View style={styles.contentContainer}>
+            <AnimatedButton
+              title="Begin"
+              onPress={async () => {
+                await playSound();
+                setStarted(true);
+              }}
+              style={styles.beginButton}
+              backgroundColor={currentTheme.primary}
+            />
+          </View>
+          <View style={styles.themeButtonContainer}>
+            <AnimatedButton
+              title={`Theme: ${currentTheme.name}`}
+              onPress={async () => {
+                await playSound();
+                cycleTheme();
+              }}
+              style={styles.themeButton}
+              backgroundColor={currentTheme.primary}
+            />
+          </View>
+        </>
       ) : (
         <View>
-          <Text style={styles.text}>
-            {isWorkSession ? "Work Session" : "Break Time"}
-          </Text>
           <Countdown
             startImmediately={started}
             minutes={isWorkSession ? 25 : 5}
@@ -78,15 +93,36 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#ffffffff"
+  },
+  contentContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
   text: {
-    color: "#ffffff",
     fontSize: 20
   },
   beginButton: {
     paddingVertical: 16,
     paddingHorizontal: 32,
   },
+  themeButton: {
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+  },
+  themeButtonContainer: {
+    position: 'absolute',
+    bottom: 40,
+    width: '100%',
+    alignItems: 'center',
+  },
 });
+
+export default function AppWrapper() {
+  return (
+    <ThemeProvider>
+      <AboutScreen />
+    </ThemeProvider>
+  );
+}
 

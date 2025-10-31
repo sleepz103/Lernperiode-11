@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Alert } from "react-native";
 import Animated, { useAnimatedStyle, withSpring } from 'react-native-reanimated';
 import { Audio } from 'expo-av';
 import { AnimatedButton } from './components/AnimatedButton';
+import { useTheme } from './theme/ThemeContext';
 
 const STORAGE_KEY = "countdown_state";
 
@@ -17,6 +18,7 @@ type CountdownProps = {
 
 
 const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkSession }: CountdownProps) => {
+  const { currentTheme } = useTheme();
   const [finishTime, setFinishTime] = useState<Date | null>(null);
   const [secondsLeft, setSecondsLeft] = useState(minutes * 60);
   const [isRunning, setIsRunning] = useState(false);
@@ -185,7 +187,7 @@ const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkS
     });
 
     return (
-      <Animated.Text style={[styles.timer, animatedStyle]}>
+      <Animated.Text style={[styles.timer, animatedStyle, { color: currentTheme.text }]}>
         {String(value).padStart(2, '0')}
       </Animated.Text>
     );
@@ -195,8 +197,11 @@ const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkS
   const secs = secondsLeft % 60;
 
   // Render - what shows up on screen
- return (
+  return (
     <View style={styles.container}>
+      <Text style={[styles.sessionText, { color: currentTheme.text }]}>
+        {isWorkSession ? "Work Session" : "Break Time"}
+      </Text>
       <View style={styles.timerContainer}>
         <AnimatedNumber value={mins} />
         <Animated.Text style={styles.timer}>:</Animated.Text>
@@ -210,7 +215,7 @@ const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkS
               await playSound();
               handlePauseResume();
             }}
-            backgroundColor="#000000ff"
+            backgroundColor={currentTheme.primary}
           />
         )}
         <AnimatedButton
@@ -219,7 +224,7 @@ const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkS
             await playSound();
             handleSkip();
           }}
-          backgroundColor="#666666"
+          backgroundColor="            backgroundColor={currentTheme.primary}"
         />
       </View>
     </View>
@@ -233,6 +238,12 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     padding: 20,
+  },
+  sessionText: {
+    fontSize: 24,
+    fontWeight: "600",
+    marginBottom: 16,
+    textAlign: "center",
   },
   timer: {
     fontSize: 48,
