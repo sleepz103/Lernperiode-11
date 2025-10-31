@@ -89,19 +89,19 @@ Heute habe ich das Ziel gehabt, die App fertig zu stellen, damit sie zum präsen
 
 Project ideas:
 
-- [ ] ~~Just one card (easy)~~
+- [x] ~~Just one card (easy)~~
 
-- [ ] ~~Prepare 5 minute timer after ending 25 (must have)~~
+- [x] ~~Prepare 5 minute timer after ending 25 (must have)~~
 
-- [ ] ~~run in background (must have)~~
+- [x] ~~run in background (must have)~~
 
-- [ ] ~~correct design and hide distractions (enhancement)~~
+- [x] ~~correct design and hide distractions (enhancement)~~
 
 - [ ] ~~alert when time ends (enhancement)~~
 
 - [ ] allow choosing between pre-defined times and setting own time (enhancement)
 
-- [ ] ~~let user skip to break/work~~
+- [x] ~~let user skip to break/work~~
 
 - [ ] allow to add tasks (text + state) (major update)
   
@@ -114,3 +114,8 @@ Project ideas:
   - [ ] tasks can have defined pomos
 
 ## Reflexion
+
+Ich habe schon seit anfang die Idee für Projekt gewusst. Ich mochte aber zuerst mich nach Coding errinnern, denn ich habe für ein Zeit nicht programmiert, und habe veruscht, meine Idee in C# umzusetzen. Da habe ich paar Probleme gehabt, aber grundsätzlich geschafft. Die Projekt habe ich mit MAUI angefangen, weil unser Modul mit MAUI gewesen ist. Als ich bemerkt habe, dass es eine Alternative gibt, habe ich sofort zu Expo gewechselt, da MAUI unfreundlich für IOS testing ist. Zuerst habe ich ein Tutorial angeschaut und das hat mit dem Anfang geholfen. Zunächst habe ich KI gefragt, mir Countdown einzubauen. Ich habe das wegen fehlender Wissen an Sprache gemacht, hat mir aber nicht gefallen, dass KI für mich macht und ich nichts verstehe. Deswegen habe ich versucht, anders an die Aufgabe zu kommen. Zuerst habe ich Code geschrieben, dann lass ich Copilot meine Idee vollständig implementieren. In der Dokumentation von Benachrichtungen habe ich verstanden, dass das sogar mit KI zu kompliziert für mein Level ist und habe das Feature gelassen. Gegen Ende ist mein Ziel gewesen, dass ich den Code gut verstehe. Also hat mir KI Hinweisungen gegeben, wie man selber einfaches Countdown programmiert und habe fast vollständig selber programmiert. Dankt dem habe ich React viel besser verstanden. Am Ende habe ich Buttons mit KI eingebaut, UI Verbesserung mi KI gemacht, und SFX hinzugefügt. Da habe ich meine prompt engineering Fähigkeiten eingesetzt, damit die Arbeit klar erfolgt. (237)
+
+Wenn mir meine Arbeitsweise nicht gefällt, wechsle ich die Strategie.
+Wenn ich die Sprache nicht kenne, verwende ich die KI.
