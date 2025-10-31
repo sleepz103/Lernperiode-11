@@ -14,6 +14,8 @@
 
 ## fertiges Projekt
 
+I
+
 ## 22.8
 
 - [x] Arbeitspaket 1: Countdown in C# erstellen, der nach Benutzerinput reagiert.
@@ -79,6 +81,12 @@ Ich habe während den Sprachaufenthalt die drei Arbeitspaketen nachgeholt. Zuers
 - [x] ~~As a user that is concentrated on work, I'd like the app to play sound when a session comes to an end in order to know that it ended~~ As a developer with little knowledge on audio I want to have sound played on click of a button in order to complete this AP
 
 - [ ] As a user that likes to personalise their world I want to have a button that with each press changes and remembers a different theme in order to fit the app to myself / mood
+
+
+
+Heute habe ich das Ziel gehabt, die App fertig zu stellen, damit sie zum präsentieren ist. Ich fand, dass es an Reaktion bzw. Haptics in App fehlte. Da ich aber schon früher versucht habe, Haptics zu installieren, habe ich entschieden, sie mit Audio auszuwechseln. Das hat ganz gut funktioniert, ausser wenn components zu schnell gelöscht werden. Danach habe ich die Animationen verbessert, sodass nun jede Button angenehmer zu drücken ist. 
+
+
 
 ----
 
