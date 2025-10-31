@@ -54,15 +54,21 @@ Heute habe ich anders zum Arbeiten gekommen. Für jede Arbeitspaket habe ich zue
 
 - [ ] As a user with minimalistic requirements I'd like smooth animations and a toggle to raw bones design in order to enjoy simple app aesthetic
 
-- [ ] As a developer with little react skills I'd like the code to be refactored in order to understand the structure of the app and be able to develop better
+- [x] As a developer with little react skills I'd like the code to be refactored in order to understand the structure of the app and be able to develop better
 
-- [ ] As a fast thinking user I'd like choose between pre-defined times in order to get to work more quickly
+- [x] let user skip to break/work
 
 Heute habe ich mich keine Arbeitspaketene überarbeitet. Ich habe mich sehr schlecht gefühlt. Am Anfang habe ich versucht, die Expo Pakaten zu reparieren. Dann habe ich bemerkt, dass ich mich schwach fühle. Also habe ich Neocitran genommen.
 Ich bin bereit, Absenzpunkte anzunehmen. Allerdings werde ich morgen schauen, ob ich die Arbeit nachholen kann. Für heute mache ich schluss.
 Für mich ist es wichtig, dass ich für Sprschaufenthalt gesund bleibe, daher bin ich damkbar, dass ich früher zu Hause sein konnte.
 
 # 31.10 (7/7)
+
+- [ ] As a fast thinking user I'd like choose between pre-defined times in order to get to work more quickly
+
+- [ ] As a user with minimalistic requirements I'd like smooth animations and a toggle to raw bones design in order to enjoy simple app aesthetic
+
+
 
 ----
 
@@ -80,7 +86,7 @@ Project ideas:
 
 - [ ] allow choosing between pre-defined times and setting own time (enhancement)
 
-- [ ] let user skip to break/work
+- [ ] ~~let user skip to break/work~~
 
 - [ ] allow to add tasks (text + state) (major update)
   
