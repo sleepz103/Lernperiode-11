@@ -14,6 +14,8 @@
 
 ## fertiges Projekt
 
+<img title="app_preview" src="./assets/screen_recording.gif" alt="cloud_sunset_banner" width="350">  
+
 Watch on Youtube for SFX preview!
 ![My light Pomodoro](https://youtube.com/shorts/xJbITQi5cA8?feature=share)
 
