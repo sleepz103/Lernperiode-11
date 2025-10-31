@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import Countdown from "./Countdown";
 import { Audio } from 'expo-av';
+import { AnimatedButton } from "./components/AnimatedButton";
 
 export default function AboutScreen() {
   const [started, setStarted] = useState(false);
@@ -9,7 +10,7 @@ export default function AboutScreen() {
   const soundRef = useRef<Audio.Sound | null>(null);
 
   useEffect(() => {
-    async function loadSound() {
+    async function loadSounds() {
       try {
         const { sound } = await Audio.Sound.createAsync(
           require('../assets/sounds/click.wav')
@@ -19,13 +20,15 @@ export default function AboutScreen() {
         console.error('Error loading sound:', error);
       }
     }
-    loadSound();
+    loadSounds();
     return () => {
       if (soundRef.current) {
         soundRef.current.unloadAsync();
       }
     };
   }, []);
+
+
 
   const playSound = async () => {
     try {
@@ -45,14 +48,14 @@ const handleComplete = () => {
 return (
     <View style={styles.container}>
       {!started ? (
-        <Pressable 
-          style={styles.beginButton} 
+        <AnimatedButton
+          title="Begin"
           onPress={async () => {
             await playSound();
             setStarted(true);
-          }}>
-          <Text style={styles.text}>Begin</Text>
-        </Pressable>
+          }}
+          style={styles.beginButton}
+        />
       ) : (
         <View>
           <Text style={styles.text}>
@@ -82,12 +85,8 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
   beginButton: {
-    width: 200,
-    height: 200,
-    borderRadius: 100, // half of width/height
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#8ad07cff",
+    paddingVertical: 16,
+    paddingHorizontal: 32,
   },
 });
 

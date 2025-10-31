@@ -1,8 +1,9 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useEffect, useState, useRef } from "react";
-import { Pressable, StyleSheet, Text, View, Alert } from "react-native";
+import { StyleSheet, Text, View, Alert } from "react-native";
 import Animated, { useAnimatedStyle, withSpring } from 'react-native-reanimated';
 import { Audio } from 'expo-av';
+import { AnimatedButton } from './components/AnimatedButton';
 
 const STORAGE_KEY = "countdown_state";
 
@@ -203,25 +204,23 @@ const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkS
       </View>
       <View style={styles.buttonContainer}>
         {(secondsLeft > 0 || !isRunning) && (
-          <Pressable
-            style={[styles.buttonBase, styles.buttonPrimary]}
+          <AnimatedButton
+            title={isRunning ? "Pause" : "Resume"}
             onPress={async () => {
               await playSound();
               handlePauseResume();
             }}
-          >
-            <Text style={styles.buttonText}>{isRunning ? "Pause" : "Resume"}</Text>
-          </Pressable>
+            backgroundColor="#000000ff"
+          />
         )}
-        <Pressable
-          style={[styles.buttonBase, styles.buttonSecondary]}
+        <AnimatedButton
+          title="Skip"
           onPress={async () => {
             await playSound();
             handleSkip();
           }}
-        >
-          <Text style={styles.buttonText}>Skip</Text>
-        </Pressable>
+          backgroundColor="#666666"
+        />
       </View>
     </View>
   );
@@ -239,22 +238,6 @@ const styles = StyleSheet.create({
     fontSize: 48,
     fontWeight: "bold",
     marginBottom: 20,
-  },
-  buttonBase: {
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 10,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  buttonPrimary: {
-    backgroundColor: "#000000ff",
-  },
-  buttonSecondary: {
-    backgroundColor: "#666666",
   },
   timerContainer: {
     flexDirection: 'row',
