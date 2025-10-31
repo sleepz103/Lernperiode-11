@@ -1,7 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import React, { useEffect, useState } from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import React, { useEffect, useState, useRef } from "react";
+import { Pressable, StyleSheet, Text, View, Alert } from "react-native";
 import Animated, { useAnimatedStyle, withSpring } from 'react-native-reanimated';
+import { Audio } from 'expo-av';
 
 const STORAGE_KEY = "countdown_state";
 
@@ -18,6 +19,47 @@ const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkS
   const [finishTime, setFinishTime] = useState<Date | null>(null);
   const [secondsLeft, setSecondsLeft] = useState(minutes * 60);
   const [isRunning, setIsRunning] = useState(false);
+  const soundRef = useRef<Audio.Sound | null>(null);
+  const endSoundRef = useRef<Audio.Sound | null>(null);
+
+  // Initialize sound
+  useEffect(() => {
+    async function loadSounds() {
+      try {
+        const { sound: clickSound } = await Audio.Sound.createAsync(
+          require('../assets/sounds/click.wav')
+        );
+        const { sound: endSound } = await Audio.Sound.createAsync(
+          require('../assets/sounds/beepbeep.wav')
+        );
+        soundRef.current = clickSound;
+        endSoundRef.current = endSound;
+      } catch (error) {
+        console.error('Error loading sounds:', error);
+      }
+    }
+    loadSounds();
+    return () => {
+      if (soundRef.current) {
+        soundRef.current.unloadAsync();
+      }
+      if (endSoundRef.current) {
+        endSoundRef.current.unloadAsync();
+      }
+    };
+  }, []);
+
+  const playSound = async () => {
+    try {
+      if (soundRef.current) {
+        await soundRef.current.replayAsync();
+      } else {
+        Alert.alert('Sound not loaded');
+      }
+    } catch (error) {
+      Alert.alert('Error playing sound', error instanceof Error ? error.message : 'Unknown error');
+    }
+  };
 
   // Code from Claude 3.5 which I do not understand
   // essentially it should load and save the timer state to persistent storage
@@ -95,6 +137,10 @@ const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkS
         if (diff === 0) {
           setIsRunning(false);
           setFinishTime(null);
+          // Play end sound
+          if (endSoundRef.current) {
+            endSoundRef.current.replayAsync().catch(console.error);
+          }
           // Clear saved state when complete
           AsyncStorage.removeItem(STORAGE_KEY).catch(console.error);
           isComplete?.();
@@ -163,14 +209,20 @@ const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkS
         {(secondsLeft > 0 || !isRunning) && (
           <Pressable
             style={[styles.buttonBase, styles.buttonPrimary]}
-            onPress={handlePauseResume}
+            onPress={async () => {
+              await playSound();
+              handlePauseResume();
+            }}
           >
             <Text style={styles.buttonText}>{isRunning ? "Pause" : "Resume"}</Text>
           </Pressable>
         )}
         <Pressable
           style={[styles.buttonBase, styles.buttonSecondary]}
-          onPress={handleSkip}
+          onPress={async () => {
+            await playSound();
+            handleSkip();
+          }}
         >
           <Text style={styles.buttonText}>Skip</Text>
         </Pressable>
