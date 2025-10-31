@@ -66,7 +66,7 @@ Für mich ist es wichtig, dass ich für Sprschaufenthalt gesund bleibe, daher bi
 
 - [ ] As a fast thinking user I'd like choose between pre-defined times in order to get to work more quickly
 
-- [ ] As a user with minimalistic requirements I'd like smooth animations and a toggle to raw bones design in order to enjoy simple app aesthetic
+- [x] As a user with minimalistic requirements I'd like smooth animations and a~~ toggle to raw bones design in order to enjoy simple app aesthetic~~
 
 
 
