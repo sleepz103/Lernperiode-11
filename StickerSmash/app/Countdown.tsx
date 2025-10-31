@@ -137,10 +137,6 @@ const Countdown = ({ minutes = 25, startImmediately = false, isComplete, isWorkS
         if (diff === 0) {
           setIsRunning(false);
           setFinishTime(null);
-          // Play end sound
-          if (endSoundRef.current) {
-            endSoundRef.current.replayAsync().catch(console.error);
-          }
           // Clear saved state when complete
           AsyncStorage.removeItem(STORAGE_KEY).catch(console.error);
           isComplete?.();
